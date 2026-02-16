@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Gediya | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { 
+                extend: { 
+                    colors: { darkBg: '#020617', darkCard: '#0f172a' },
+                } 
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+        }
+        .dark .bg-grid {
+            background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::before {
+            content: ''; position: absolute; width: 0; height: 3px; bottom: -4px; left: 0;
+            background: #3b82f6; border-radius: 10px; transition: width 0.3s ease;
+        }
+        .nav-link:hover::before { width: 100%; }
+
+        .glow-card { position: relative; overflow: hidden; }
+        .glow-card::after {
+            content: ""; position: absolute; inset: 0; opacity: 0;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.15), transparent 40%);
+            transition: opacity 0.5s;
+        }
+        .glow-card:hover::after { opacity: 1; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-darkBg dark:text-slate-100 transition-colors duration-500 bg-grid">
+
+    <nav class="fixed w-full z-50 border-b border-slate-200/50 dark:border-slate-800/50 bg-white/60 dark:bg-darkBg/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <div class="flex items-center gap-4">
+                <div class="text-xl font-extrabold tracking-tighter">
+                    <span class="text-blue-600">KRISHNA</span><span class="text-slate-400">.DS</span>
+                </div>
+
+                <button onclick="toggleTheme()" class="group relative p-3 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 hover:scale-110 transition-all active:scale-95">
+                    <i data-lucide="sun" id="sun-icon" class="hidden text-amber-400 w-5 h-5"></i>
+                    <i data-lucide="moon" id="moon-icon" class="text-indigo-500 w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.2em]">
+                <a href="#home" class="nav-link hover:text-blue-600 transition">Home</a>
+                <a href="#skills" class="nav-link hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="nav-link hover:text-blue-600 transition">Projects</a>
+                <a href="#education" class="nav-link hover:text-blue-600 transition">Education</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/krishnagediya5" target="_blank" class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/in/krishna-gediya-87187b305/" target="_blank" class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="https://drive.google.com/file/d/1cclIiKE-QusaPFxMaHkxMI6TtP1Lzeva/view" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold uppercase tracking-widest rounded-xl transition-all shadow-md active:scale-95" target="_blank">
+                    <i data-lucide="file-down" class="w-3.5 h-3.5"></i>
+                    Resume
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden">
+        <div class="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-[120px] animate-pulse"></div>
+        
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 mb-6">
+                    <span class="text-[10px] font-black tracking-widest text-blue-600 uppercase">Data Science & AI</span>
+                </div>
+
+                <h1 class="text-4xl lg:text-5xl font-black mb-4 tracking-tight leading-tight dark:text-white">
+                    Hey, I am <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-400">
+                        Krishna Gediya
+                    </span>
+                </h1>
+
+                <p class="text-lg md:text-xl font-medium mb-8 text-slate-500 dark:text-slate-400">
+                    Exploring <span id="typed" class="text-blue-500"></span>
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="mailto:krishnagediya5@gmail.com" class="group bg-slate-900 dark:bg-white dark:text-darkBg text-white px-8 py-3 rounded-xl font-bold flex items-center gap-3 hover:scale-105 transition-all shadow-lg">
+                        Hire Me <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left" data-aos-duration="1200">
+                <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-slate-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-blue-600 rounded-lg text-white"><i data-lucide="target" class="w-5 h-5"></i></div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest text-blue-600">Objective</h4>
+                    </div>
+                    <p class="text-base lg:text-lg text-slate-700 dark:text-slate-300 leading-relaxed italic font-medium">
+                        "Motivated Data Science fresher with a strong interest in machine learning and data analysis. Seeking an entry-level opportunity to apply data science fundamentals, enhance technical skills, and contribute to data-driven solutions."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-16 text-center tracking-tight" data-aos="fade-up">Technical & Soft Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glow-card p-10 rounded-[2.5rem] bg-white dark:bg-darkCard border border-slate-200/50 dark:border-slate-800/50 shadow-xl" onmousemove="handleMouseMove(event)">
+                    <div class="w-8 h-8 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8"><i data-lucide="code" class="text-blue-500"></i></div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Programming & Libraries</h4>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Python, NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn</p>
+                </div>
+                <div class="glow-card p-10 rounded-[2.5rem] bg-white dark:bg-darkCard border border-slate-200/50 dark:border-slate-800/50 shadow-xl" onmousemove="handleMouseMove(event)">
+                    <div class="w-8 h-8 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-8"><i data-lucide="brain-circuit" class="text-indigo-500"></i></div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Machine Learning</h4>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Regression, Classification, Clustering, Model Evaluation</p>
+                </div>
+                <div class="glow-card p-10 rounded-[2.5rem] bg-white dark:bg-darkCard border border-slate-200/50 dark:border-slate-800/50 shadow-xl" onmousemove="handleMouseMove(event)">
+                    <div class="w-8 h-8 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-8"><i data-lucide="bar-chart-3" class="text-emerald-500"></i></div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter">Data Analysis & Tools</h4>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Data Cleaning, EDA, Feature Engineering <br/> Jupyter Notebook, PowerBI, Streamlit, Excel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-white dark:bg-darkCard/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-16 tracking-tight">Recent Projects</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group relative p-1 bg-gradient-to-br from-blue-500/20 to-transparent rounded-[2rem] transition-all hover:scale-[1.02]">
+                    <div class="bg-slate-50 dark:bg-darkBg p-8 rounded-[1.9rem] h-full border border-white/20">
+                        <h3 class="text-2xl font-extrabold mb-4 group-hover:text-blue-500 transition-colors">Diabetes Prediction Web App</h3>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">Developed a web app using Streamlit and ML algorithms to predict diabetes based on health inputs like BMI and glucose levels.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-500 rounded-lg text-[10px] font-black uppercase">Streamlit</span>
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-500 rounded-lg text-[10px] font-black uppercase">Scikit-learn</span>
+                            <a href="https://diabetes-prediction-web-app1-by-krishna-gn83xaagawvj2vnaljsfgk.streamlit.app/" target="_blank" class="flex items-center gap-1 px-3 py-1 bg-blue-600 text-white rounded-lg text-[10px] font-black uppercase hover:bg-blue-700 transition-colors">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative p-1 bg-gradient-to-br from-indigo-500/20 to-transparent rounded-[2rem] transition-all hover:scale-[1.02]">
+                    <div class="bg-slate-50 dark:bg-darkBg p-8 rounded-[1.9rem] h-full border border-white/20">
+                        <h3 class="text-2xl font-extrabold mb-4 group-hover:text-indigo-500 transition-colors">AutoML Studio</h3>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">Built an interactive AutoML application for automated classification/regression pipelines, featuring data preprocessing and real-time model comparison.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-600 rounded-lg text-[10px] font-black uppercase">Python</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-600 rounded-lg text-[10px] font-black uppercase">AutoML</span>
+                            <a href="https://automl-studio-by-krishna-yjyumngbfngbyfuqjjbikz.streamlit.app/vv" target="_blank" class="flex items-center gap-1 px-3 py-1 bg-indigo-600 text-white rounded-lg text-[10px] font-black uppercase hover:bg-indigo-700 transition-colors">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24">
+        <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <div class="relative p-10 bg-white dark:bg-darkCard rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
+                <div class="absolute top-0 right-0 p-12 opacity-10"><i data-lucide="graduation-cap" class="w-32 h-32"></i></div>
+                <h2 class="text-3xl font-extrabold mb-6">Academic Journey</h2>
+                <h4 class="text-xl font-bold">B.E. in Computer Science & Engineering (Data Science)</h4>
+                <p class="text-blue-600 font-bold mt-1">Gujarat Technological University, Ahmedabad</p>
+                <div class="flex items-center gap-4 mt-6 text-slate-400 font-black uppercase text-[10px] tracking-[0.3em]">
+                    <span>2023</span>
+                    <div class="h-px flex-1 bg-slate-200 dark:bg-slate-700"></div>
+                    <span>2027</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-500 border-t border-slate-200/50 dark:border-slate-800/50">
+        <p class="font-bold tracking-widest uppercase text-[10px]">Krishna Gediya • Ahmedabad, Gujarat • 2026</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        lucide.createIcons();
+        
+        new Typed('#typed', {
+            strings: ['Machine Learning', 'Data Analysis', 'AutoML Pipelines', 'Predictive Solutions'],
+            typeSpeed: 50, backSpeed: 30, loop: true
+        });
+
+        function handleMouseMove(e) {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+            card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            document.getElementById('moon-icon').classList.toggle('hidden', isDark);
+            document.getElementById('sun-icon').classList.toggle('hidden', !isDark);
+        }
+    </script>
+</body>
+</html>
